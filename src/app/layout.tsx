@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Login Flow",
@@ -14,7 +15,37 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>{children}</body>
+      <body className={GeistSans.className}>
+        <header>
+          <p>Help</p>
+          <p>Orders & Returns</p>
+          <p>Hi, John</p>
+        </header>
+        <nav>
+          <div>
+            <div>
+              <h1>ECOMMERCE</h1>
+            </div>
+            <div>
+              <ul>
+                <li>Categories</li>
+                <li>Sale</li>
+                <li>Clearance</li>
+                <li>New Stock</li>
+                <li>Trending</li>
+              </ul>
+            </div>
+            <div>
+              <Image src={"/search.ico"} alt="" width={25} height={25}></Image>
+              <Image src={"/cart.ico"} alt="" width={25} height={25}></Image>
+            </div>
+          </div>
+          <div>
+            <p><span>{"<"}</span>Get 10% off on business sign up<span>{">"}</span></p>
+          </div>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
