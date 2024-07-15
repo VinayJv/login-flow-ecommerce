@@ -43,10 +43,9 @@ export default function Verfiy(){
 },[]);
 
     return(
-        <form style={{marginTop: "5rem", textAlign: "center"}} onSubmit={handleVerification}>
-            <h1>Verify your email</h1>
-            <p>{`Enter the 6 digit code you have received on ${user?.email}`}</p>
-            <p style={{textAlign: "left", fontWeight: "600"}}>Code</p>
+        <form style={{textAlign: "center"}} onSubmit={handleVerification} className={styles.verifyContainer}>
+            <h1 style={{ margin: "1rem" }}>Verify your email</h1>
+            <p style={{margin: "1rem"}}>{`Enter the 6 digit code you have received on ${user?.email}`}</p>
         <div className={styles.otpInputContainer}>
             <label>
                 <input maxLength={1} type="number" required></input>

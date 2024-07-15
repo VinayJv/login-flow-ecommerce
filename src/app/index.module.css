@@ -89,6 +89,9 @@
     gap: 10px;
     align-items: center;
 }
+.verifyContainer{
+    margin-top: 4rem;
+}
 
 @media screen and (max-width: 768px) {
     .otpInputContainer{
@@ -114,5 +117,8 @@
     .numberContainer{
         display: flex;
         gap: 2px;
+    }
+    .verifyContainer{
+        margin-top: 1rem;
     }
  }
