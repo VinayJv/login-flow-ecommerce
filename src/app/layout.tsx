@@ -1,8 +1,10 @@
 import "~/styles/globals.css";
+import styles from "~/app/index.module.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import Image from "next/image";
+import { UserProvider } from "context/UserContext";
 
 export const metadata: Metadata = {
   title: "Login Flow",
@@ -44,7 +46,11 @@ export default function RootLayout({
             <p><span>{"<"}</span>Get 10% off on business sign up<span>{">"}</span></p>
           </div>
         </nav>
-        {children}
+        <UserProvider>
+          <main className={styles.main}>
+            {children}
+          </main>
+        </UserProvider>
       </body>
     </html>
   );

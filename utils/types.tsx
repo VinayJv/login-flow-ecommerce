@@ -16,3 +16,8 @@ export type userContext = {
     userStatus: boolean,
     setUserStatus: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export type Categories = {
+    id: number,
+    name: string
+}

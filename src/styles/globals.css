@@ -77,6 +77,70 @@ span {
   margin: 16px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 576px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #C1C1C1;
+}
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+form > div > h2{
+  margin: 1rem 0 1rem 0;
+  align-self: center;
+}
+form > div > div {
+  display: flex;
+  flex-direction: column;
+}
+form > div > div > p:first-child{
+  align-self: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+form > div > div > p:last-child{
+  margin-top: 10px;
+  align-self: center;
+}
+form > label {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0rem;
+}
+form > label > input {
+  border: 1px solid #C1C1C1;
+  border-radius: 5px;
+  margin-top: 7px;
+  height: 48px;
+  padding-left: 10px;
+}
+form > label > div > input{
+  width: 100%;
+  border: 1px solid #C1C1C1;
+  border-radius: 5px;
+  margin-top: 7px;
+  height: 48px;
+  padding-left: 10px;
+}
+form > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  height: 48px;
+  margin: 16px 0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+}
+
 @media screen and (max-width: 768px) {
   header {
     padding: 10px;
@@ -95,6 +159,8 @@ span {
       width: 20%;
     }
     nav > div > div:nth-child(2){
+      padding-left: 10px;
+      justify-content: flex-start;
       width: 80%;
     }
     ul{
