@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import Image from "next/image";
 import { UserProvider } from "context/UserContext";
+import Loader from "components/Loader";
 
 export const metadata: Metadata = {
   title: "Login Flow",
@@ -48,6 +49,7 @@ export default function RootLayout({
         </nav>
         <UserProvider>
           <main className={styles.main}>
+            <Loader />
             {children}
           </main>
         </UserProvider>

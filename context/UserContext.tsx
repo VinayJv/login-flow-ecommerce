@@ -22,11 +22,15 @@ export function UserProvider({children} : Props){
 
     const [userStatus, setUserStatus] = useState(false);
 
+    const [loaderStatus, setloaderStatus] = useState(false);
+
     const value = {
         user,
         setUser,
         userStatus,
-        setUserStatus
+        setUserStatus,
+        loaderStatus,
+        setloaderStatus
     }
     
     return(

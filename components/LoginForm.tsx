@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 export function LoginForm(){
     const [toggle, setToggle] = useState<boolean>(false);
-    const { setUser, setUserStatus } = useUserContext();
+    const { setUser, setUserStatus, loaderStatus, setloaderStatus } = useUserContext();
     const router = useRouter();
 
 
@@ -20,6 +20,8 @@ export function LoginForm(){
 
     const handleFormInput = async (e: React.BaseSyntheticEvent) => {
         e.preventDefault();
+
+        setloaderStatus(true);
 
         const { foundUser, status } = await fetch("/api",{
             method: "POST",
@@ -31,6 +33,8 @@ export function LoginForm(){
                 password: e.target.elements[1].value
             })
         }).then((data)=>data.json());
+
+        setloaderStatus(false);
 
         if(status === 200 && foundUser.verified){
             if(setUser !== undefined){

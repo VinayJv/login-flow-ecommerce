@@ -14,7 +14,9 @@ export type userContext = {
     user: user,
     setUser: React.Dispatch<React.SetStateAction<user>>,
     userStatus: boolean,
-    setUserStatus: React.Dispatch<React.SetStateAction<boolean>>
+    setUserStatus: React.Dispatch<React.SetStateAction<boolean>>,
+    loaderStatus: boolean,
+    setloaderStatus: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export type Categories = {
