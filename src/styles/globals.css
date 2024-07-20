@@ -133,6 +133,7 @@ form > p {
   justify-content: center;
 }
 button {
+  cursor: pointer;
   height: 48px;
   margin: 16px 0;
   color: white;

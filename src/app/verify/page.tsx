@@ -36,6 +36,14 @@ export default function Verfiy(){
         }
     }
 
+    const renderInputs = () => {
+        return Array.from({length: 6}, (item, id) => id).map((id, index)=>{
+            return <label key={index}>
+                <input maxLength={1} type="text" required></input>
+            </label>
+        });
+    }
+
     useLayoutEffect(()=>{
         if(!userStatus){
             router.push("/");
@@ -47,24 +55,7 @@ export default function Verfiy(){
             <h1 style={{ margin: "1rem" }}>Verify your email</h1>
             <p style={{margin: "1rem"}}>{`Enter the 6 digit code you have received on ${user?.email}`}</p>
         <div className={styles.otpInputContainer}>
-            <label>
-                <input maxLength={1} type="number" required></input>
-            </label>
-            <label>
-                <input maxLength={1} type="number" required></input>
-            </label>
-            <label>
-                <input maxLength={1} type="number" required></input>
-            </label>
-            <label>
-                <input maxLength={1} type="number" required></input>
-            </label>
-            <label>
-                <input maxLength={1} type="number" required></input>
-            </label>
-            <label>
-                <input maxLength={1} type="number" required></input>
-            </label>
+            {renderInputs()}
         </div>
         <button type="submit">Verify</button>
     </form>
