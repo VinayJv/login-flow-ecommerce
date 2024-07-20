@@ -8,10 +8,11 @@ import { useRouter } from "next/navigation";
 
 export default function SignUp(){
 
-    const { setUser, setUserStatus } = useUserContext();
+    const { setUser, setUserStatus, setloaderStatus } = useUserContext();
     const router = useRouter();
 
     const handleForm = async (e: React.BaseSyntheticEvent) => {
+        setloaderStatus(true);
         e.preventDefault();
         const newUser = {
             name: e.target[0].value,
@@ -50,6 +51,7 @@ export default function SignUp(){
                         setUser(createdUser);
                         setUserStatus(true);
                     }
+                    setloaderStatus(false);
                     router.push("/verify");
                 } else {
                     alert("Error sending mail! Try again after sometime")
@@ -57,6 +59,7 @@ export default function SignUp(){
             }
         }
         catch(err){
+            setloaderStatus(false);
             alert("Email Already Exists, Please Login");
         }  
     }

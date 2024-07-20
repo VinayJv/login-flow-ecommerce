@@ -9,11 +9,12 @@ import { useRouter } from "next/navigation";
 
 export default function Verfiy(){
 
-    const { user,  userStatus, setUser} = useUserContext();
+    const { user,  userStatus, setUser, setloaderStatus} = useUserContext();
     const router = useRouter();
 
     const handleVerification = async (e: React.BaseSyntheticEvent) => {
         e.preventDefault();
+        setloaderStatus(true);
         let userInput = "";
         for(let i = 0; i<e.target.elements.length; i++){
             userInput+= e.target.elements[i].value
@@ -29,9 +30,11 @@ export default function Verfiy(){
                 if(setUser !== undefined){
                     setUser(updatedUser);
                 }
+                setloaderStatus(false);
                 router.push("/dashboard");
             }
         } else {
+            setloaderStatus(false);
             alert("Check Your Password");
         }
     }
